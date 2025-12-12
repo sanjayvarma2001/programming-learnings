@@ -3,7 +3,7 @@ def twosum(nums,target):
     for i in range(len(nums)):
         complement = target - nums[i]
         for j in range(i+1, len(nums)):
-            if complement in nums:
+            if nums[j] == complement:
                 return (i,j)
     return "Found no pair"
             #OR#
@@ -32,14 +32,15 @@ def twosum_hash(nums,target):
 #two pointer Approach
 def twosum_two_pointer(nums, target):
     paired = [(key,value) for key, value in enumerate(nums)]
-    paired.sort(key = lambda p:p[0])
+    paired.sort(key = lambda p:p[1])
     n=len(paired)
-    for i in range(n-1):
-        left, right = 0, n-1
+    left, right = 0, n-1
+    while left < right:
         if nums[left] + nums[right] < target:
             left +=1
         elif nums[left] + nums[right] > target:
             right -=1
         else:
-            return (paired[left][1],paired[right][1])
+            return (paired[left][0],paired[right][0])
         
+    return None
