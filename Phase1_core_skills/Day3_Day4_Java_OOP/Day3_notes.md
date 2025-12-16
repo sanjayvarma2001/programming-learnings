@@ -95,15 +95,17 @@
     this.name = name;
     }
 
-## 3. `this` Keyword Mastery
+## 3. `this` Keyword Mastery 
     | Usage | Example | Purpose |
     |-------|---------|---------|
     | Field assignment | `this.balance = balance;` | Avoid parameter shadowing |
     | Method calls | `this.deposit(100);` | Explicit object reference |
     | Constructor chaining | `this(account, 0);` | Call another constructor |
+    - in python self serves the same instincts as this in java
 
 ## 4. Instance Methods (No Account Parameter!)
     **Key**: `acc1.deposit(500)` → `this` = `acc1`
+    - here to get the balance we don't need any parameters.
 
 ## 5. Exception Hierarchy
     Constructor: IllegalArgumentException (balance < 0)
